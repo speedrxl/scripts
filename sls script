@@ -1,116 +1,84 @@
---// Instances
+-- Instances:
 
-local spark = Instance.new("ScreenGui")
-spark.IgnoreGuiInset = false
-spark.ResetOnSpawn = true
-spark.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-spark.Name = "Spark"
-spark.Parent = workspace
+local Spark = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local SparkClientLabel = Instance.new("TextLabel")
+local GhostLabel = Instance.new("TextLabel")
+local TextButton = Instance.new("TextButton")
+local CloseLabel = Instance.new("TextLabel")
 
-local frame = Instance.new("Frame")
-frame.BackgroundColor3 = Color3.new(0.14902, 0.14902, 0.14902)
-frame.BorderColor3 = Color3.new(0, 0, 0)
-frame.BorderSizePixel = 0
-frame.Position = UDim2.new(0.683462381, 0, 0.34470588, 0)
-frame.Size = UDim2.new(0, 494, 0, 264)
-frame.Visible = true
-frame.Parent = spark
+--Properties:
 
-local uicorner = Instance.new("UICorner")
-uicorner.Parent = frame
+Spark.Name = "Spark"
+Spark.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Spark.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-local uistroke = Instance.new("UIStroke")
-uistroke.Color = Color3.new(1, 1, 1)
-uistroke.Thickness = 2
-uistroke.Parent = frame
-uistroke.Draggable = true
+Frame.Parent = Spark
+Frame.BackgroundColor3 = Color3.fromRGB(38, 38, 38)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0.683462381, 0, 0.34470588, 0)
+Frame.Size = UDim2.new(0, 494, 0, 264)
+Frame.Draggable = true
 
-local spark_client_label = Instance.new("TextLabel")
-spark_client_label.Font = Enum.Font.Unknown
-spark_client_label.Text = "Spark Client"
-spark_client_label.TextColor3 = Color3.new(1, 1, 1)
-spark_client_label.TextSize = 32
-spark_client_label.BackgroundColor3 = Color3.new(1, 1, 1)
-spark_client_label.BackgroundTransparency = 1
-spark_client_label.BorderColor3 = Color3.new(0, 0, 0)
-spark_client_label.BorderSizePixel = 0
-spark_client_label.Position = UDim2.new(-0.0526315793, 0, -0.0265151523, 0)
-spark_client_label.Size = UDim2.new(0, 200, 0, 50)
-spark_client_label.Visible = true
-spark_client_label.Name = "Spark Client Label"
-spark_client_label.Parent = frame
+SparkClientLabel.Name = "Spark Client Label"
+SparkClientLabel.Parent = Frame
+SparkClientLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SparkClientLabel.BackgroundTransparency = 1.000
+SparkClientLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SparkClientLabel.BorderSizePixel = 0
+SparkClientLabel.Position = UDim2.new(-0.0526315793, 0, -0.0265151523, 0)
+SparkClientLabel.Size = UDim2.new(0, 200, 0, 50)
+SparkClientLabel.Font = Enum.Font.Unknown
+SparkClientLabel.Text = "Spark Client"
+SparkClientLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+SparkClientLabel.TextSize = 32.000
 
-local ghost_label = Instance.new("TextLabel")
-ghost_label.Font = Enum.Font.Unknown
-ghost_label.Text = "ghost"
-ghost_label.TextColor3 = Color3.new(1, 1, 1)
-ghost_label.TextSize = 20
-ghost_label.TextTransparency = 0.5
-ghost_label.BackgroundColor3 = Color3.new(1, 1, 1)
-ghost_label.BackgroundTransparency = 1
-ghost_label.BorderColor3 = Color3.new(0, 0, 0)
-ghost_label.BorderSizePixel = 0
-ghost_label.Position = UDim2.new(-0.0526315793, 0, 0.0416666679, 0)
-ghost_label.Size = UDim2.new(0, 200, 0, 50)
-ghost_label.Visible = true
-ghost_label.Name = "Ghost Label"
-ghost_label.Parent = frame
+GhostLabel.Name = "Ghost Label"
+GhostLabel.Parent = Frame
+GhostLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+GhostLabel.BackgroundTransparency = 1.000
+GhostLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+GhostLabel.BorderSizePixel = 0
+GhostLabel.Position = UDim2.new(-0.0526315793, 0, 0.0416666679, 0)
+GhostLabel.Size = UDim2.new(0, 200, 0, 50)
+GhostLabel.Font = Enum.Font.Unknown
+GhostLabel.Text = "ghost"
+GhostLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+GhostLabel.TextSize = 20.000
+GhostLabel.TextTransparency = 0.500
 
-local text_button = Instance.new("TextButton")
-text_button.Font = Enum.Font.Unknown
-text_button.Text = "Reset Ball (player needs ball)"
-text_button.TextColor3 = Color3.new(1, 1, 1)
-text_button.TextSize = 18
-text_button.BackgroundColor3 = Color3.new(0.298039, 0.380392, 0.329412)
-text_button.BorderColor3 = Color3.new(0, 0, 0)
-text_button.BorderSizePixel = 0
-text_button.Position = UDim2.new(0.297570854, 0, 0.405303031, 0)
-text_button.Size = UDim2.new(0, 200, 0, 50)
-text_button.Visible = true
-text_button.Parent = frame
-text_button.MouseButton1Down:connect(function()
+TextButton.Parent = Frame
+TextButton.BackgroundColor3 = Color3.fromRGB(76, 97, 84)
+TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.297570854, 0, 0.405303031, 0)
+TextButton.Size = UDim2.new(0, 200, 0, 50)
+TextButton.Font = Enum.Font.Unknown
+TextButton.Text = "Reset Ball (player needs ball)"
+TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.TextSize = 18.000
+TextButton.MouseButton1Down:connect(function()
 	game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvents"):WaitForChild("Football"):WaitForChild("Shoot"):FireServer()
 end)
 
-local uicorner_2 = Instance.new("UICorner")
-uicorner_2.Parent = text_button
+CloseLabel.Name = "Close Label"
+CloseLabel.Parent = Frame
+CloseLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+CloseLabel.BackgroundTransparency = 1.000
+CloseLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CloseLabel.BorderSizePixel = 0
+CloseLabel.Position = UDim2.new(0.665991902, 0, -0.0265151523, 0)
+CloseLabel.Size = UDim2.new(0, 200, 0, 50)
+CloseLabel.Font = Enum.Font.Unknown
+CloseLabel.Text = "(P) To Close"
+CloseLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloseLabel.TextSize = 26.000
 
-local close_label = Instance.new("TextLabel")
-close_label.Font = Enum.Font.Unknown
-close_label.Text = "(P) To Close"
-close_label.TextColor3 = Color3.new(1, 1, 1)
-close_label.TextSize = 26
-close_label.BackgroundColor3 = Color3.new(1, 1, 1)
-close_label.BackgroundTransparency = 1
-close_label.BorderColor3 = Color3.new(0, 0, 0)
-close_label.BorderSizePixel = 0
-close_label.Position = UDim2.new(0.665991902, 0, -0.0265151523, 0)
-close_label.Size = UDim2.new(0, 200, 0, 50)
-close_label.Visible = true
-close_label.Name = "Close Label"
-close_label.Parent = frame
+-- Scripts:
 
-local fade = Instance.new("LocalScript")
-fade.Name = "Fade"
-fade.Parent = spark
-
---//Modules
-
-local modules = {}
-
---// Scripts
-
--- Fade
-task.spawn(function()
-	local script = fade
-
-	local oldreq = require
-	local function require(target)
-		if modules[target] then
-			return modules[target]()
-		end
-		return oldreq(target)
-	end
+local function DPRHO_fake_script() -- Spark.Fade 
+	local script = Instance.new('LocalScript', Spark)
 
 	local sparkGui = script.Parent
 	local frame = sparkGui:WaitForChild("Frame")
@@ -145,4 +113,5 @@ task.spawn(function()
 	    end
 	end)
 	
-end)
+end
+coroutine.wrap(DPRHO_fake_script)()
