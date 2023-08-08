@@ -23,6 +23,7 @@ local uistroke = Instance.new("UIStroke")
 uistroke.Color = Color3.new(1, 1, 1)
 uistroke.Thickness = 2
 uistroke.Parent = frame
+uistroke.Draggable = true
 
 local spark_client_label = Instance.new("TextLabel")
 spark_client_label.Font = Enum.Font.Unknown
